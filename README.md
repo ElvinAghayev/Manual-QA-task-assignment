@@ -1,33 +1,54 @@
-Manual QA Portfolio: Web Application Testing
-Tester: Elvin Aghayev
+# Manual QA Portfolio - Elvin Aghayev
 
-Focus: Manual Testing, Test Case Design, Bug Reporting
+This repository showcases my manual testing skills, including test case design, boundary value analysis, and bug reporting for web applications.
 
-🛠️ Project Environment
-Browser: Google Chrome v.130
+## 🛠️ Environment & Tools
+- **Browser:** Google Chrome v.130
+- **Operating System:** Windows 10
+- **Testing Type:** Manual Functional Testing, UI/UX Testing, Security Testing
 
-OS: Windows 10
+---
 
-Testing Techniques: Boundary Value Analysis (BVA), Equivalence Partitioning, Security Validation
+## 📂 Project Tasks
 
-📌 Project Overview
-Task 1: Login Page Validation
-Testing the login functionality including mandatory fields, email format validation (@ and .), and minimum password length (6 characters).
+### 1. Login Page Validation
+Testing a login system with specific rules (mandatory fields, email format, minimum password length).
+- **Test Cases:** 10 (5 Positive / 5 Negative)
+- **Key Result:** Identified a critical bug where the system fails to redirect the user to the dashboard after a successful login.
 
-Total Test Cases: 10 (5 Positive / 5 Negative)
+### 2. Contact Form Validation
+Testing a contact form using **Boundary Value Analysis (BVA)** for the message field (10-200 characters).
+- **Test Cases:** 9
+- **Key Result:** Found a major bug where the form rejects exactly 200 characters despite the requirement.
 
-Primary Bug: Redirection failure after successful login (Critical).
+### 3. Password Reset Flow
+Testing the end-to-end "Forgot Password" process and security feedback.
+- **Test Cases:** 7
+- **Key Result:** Discovered a security information disclosure flaw where the system confirms email existence for non-registered users.
 
-Task 2: Contact Form Validation
-Testing a contact form with Name, Email, and Message fields. Focused on message length constraints (10 to 200 characters).
+---
 
-Total Test Cases: 9 (Focusing on BVA)
+## 📊 Summary Table
+| Task | Total Test Cases | Bugs Found |
+| :--- | :---: | :---: |
+| Login Page | 10 | 3 |
+| Contact Form | 9 | 3 |
+| Password Reset | 7 | 3 |
+| **Total** | **26** | **9** |
 
-Primary Bug: Off-by-one error where the system rejects exactly 200 characters.
+---
 
-Task 3: Password Reset Flow
-Testing the end-to-end flow of password recovery, verifying email existence logic and UI feedback.
+## 🐞 Sample Bug Reports
 
-Total Test Cases: 7
+### [BUG-001] Redirection Failure
+- **Severity:** Critical
+- **Actual Result:** User stays on the login page after entering valid credentials.
+- **Expected Result:** User should be redirected to the Dashboard.
 
-Primary Bug: Security Flaw (Information Disclosure) - showing success for non-existent emails.
+### [BUG-002] Message Field Boundary Error
+- **Severity:** Major
+- **Actual Result:** Error message appears when entering exactly 200 characters.
+- **Expected Result:** The system should accept up to 200 characters.
+
+---
+*For a detailed view of all test cases and results, please check the [TaskAssignmentReport.pdf](./TaskAssignmentReport.pdf) file in this repository.*
