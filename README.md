@@ -1,54 +1,70 @@
 # Manual QA Portfolio - Elvin Aghayev
 
-This repository showcases my manual testing skills, including test case design, boundary value analysis, and bug reporting for web applications.
+This repository showcases my ability to analyze business requirements, design comprehensive test cases, and report bugs for web applications.
 
-## 🛠️ Environment & Tools
+## 🛠️ Project Environment
 - **Browser:** Google Chrome v.130
-- **Operating System:** Windows 10
-- **Testing Type:** Manual Functional Testing, UI/UX Testing, Security Testing
+- **OS:** Windows 10
+- **Testing Techniques:** Boundary Value Analysis (BVA), Equivalence Partitioning, Functional Testing.
 
 ---
 
-## 📂 Project Tasks
+## 📂 Project Tasks & Requirements
 
 ### 1. Login Page Validation
-Testing a login system with specific rules (mandatory fields, email format, minimum password length).
+**Business Rules (Requirements):**
+- Both Email and Password fields are mandatory.
+- Email must contain '@' and '.' characters.
+- Password must be at least 6 characters long.
+- Successful login must redirect the user to the Dashboard.
+- Invalid credentials must trigger an error: "Incorrect email or password."
+
+**Testing Outcome:**
 - **Test Cases:** 10 (5 Positive / 5 Negative)
-- **Key Result:** Identified a critical bug where the system fails to redirect the user to the dashboard after a successful login.
+- **Critical Bug:** Found that the system fails to redirect to the Dashboard after valid login.
 
 ### 2. Contact Form Validation
-Testing a contact form using **Boundary Value Analysis (BVA)** for the message field (10-200 characters).
-- **Test Cases:** 9
-- **Key Result:** Found a major bug where the form rejects exactly 200 characters despite the requirement.
+**Business Rules (Requirements):**
+- All fields (Name, Email, Message) are required.
+- Email must follow a valid format.
+- Message length must be between 10 and 200 characters.
+- Success message: "Your message has been sent successfully."
+
+**Testing Outcome:**
+- **Test Cases:** 9 (Focusing on BVA)
+- **Major Bug:** System rejects submissions with exactly 200 characters (Boundary Error).
 
 ### 3. Password Reset Flow
-Testing the end-to-end "Forgot Password" process and security feedback.
+**Business Rules (Requirements):**
+- System sends a reset link if the email exists in the database.
+- Show "Email not found" for unregistered users.
+- Show "This field is required" if the email field is empty.
+
+**Testing Outcome:**
 - **Test Cases:** 7
-- **Key Result:** Discovered a security information disclosure flaw where the system confirms email existence for non-registered users.
+- **Security Flaw:** Information Disclosure — system confirms email existence for non-registered users.
 
 ---
 
-## 📊 Summary Table
-| Task | Total Test Cases | Bugs Found |
-| :--- | :---: | :---: |
-| Login Page | 10 | 3 |
-| Contact Form | 9 | 3 |
-| Password Reset | 7 | 3 |
-| **Total** | **26** | **9** |
+## 📊 Testing Statistics
+| Task | Total Cases | Positive | Negative | Bugs Found |
+| :--- | :---: | :---: | :---: | :---: |
+| Login Page | 10 | 5 | 5 | 3 |
+| Contact Form | 9 | 4 | 5 | 3 |
+| Password Reset | 7 | 2 | 5 | 3 |
+| **TOTAL** | **26** | **11** | **15** | **9** |
 
 ---
 
-## 🐞 Sample Bug Reports
+## 🐞 Sample Bug Report
 
-### [BUG-001] Redirection Failure
-- **Severity:** Critical
-- **Actual Result:** User stays on the login page after entering valid credentials.
-- **Expected Result:** User should be redirected to the Dashboard.
-
-### [BUG-002] Message Field Boundary Error
-- **Severity:** Major
-- **Actual Result:** Error message appears when entering exactly 200 characters.
-- **Expected Result:** The system should accept up to 200 characters.
+**Bug ID:** LGN-001  
+**Title:** Redirection failure after successful login.  
+**Severity:** Critical  
+**Actual Result:** User remains on the login page after clicking 'Login' with valid credentials.  
+**Expected Result:** User should be automatically redirected to the Dashboard page.
 
 ---
-*For a detailed view of all test cases and results, please check the [TaskAssignmentReport.pdf](./TaskAssignmentReport.pdf) file in this repository.*
+
+## 📂 Project Files
+- [TaskAssignmentReport.pdf](./TaskAssignmentReport.pdf) - Full detailed report including all test cases and bug details.
